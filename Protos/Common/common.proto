@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package common;
+
+option csharp_namespace = "Platform.Common.Grpc";
+
+message ResponseStatus {
+  bool is_success = 1;
+  repeated string errors = 2;
+}
