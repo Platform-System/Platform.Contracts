@@ -1,4 +1,4 @@
-﻿name: Platform.Contracts CI
+name: Contracts CI
 
 on:
   push:
