@@ -8,11 +8,13 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.27.2" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.66.0" />
     <PackageReference Include="Grpc.Tools" Version="2.66.0" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
     <Protobuf Include="Protos\Common\common.proto" GrpcServices="None" />
+    <Protobuf Include="Protos\Catalog\catalog_integration.proto" GrpcServices="Both" AdditionalImportDirs="Protos" />
   </ItemGroup>
 
 </Project>
