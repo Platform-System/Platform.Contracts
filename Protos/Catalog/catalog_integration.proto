@@ -13,6 +13,7 @@ service CatalogIntegration {
   rpc DecreaseStock (AdjustStockRequest) returns (AdjustStockResponse);
   rpc RestoreStock (AdjustStockRequest) returns (AdjustStockResponse);
   rpc AuthorizeProductCoverUpload (AuthorizeProductCoverUploadRequest) returns (AuthorizeProductCoverUploadResponse);
+  rpc SetProductCover (SetProductCoverRequest) returns (SetProductCoverResponse);
 }
 
 message GetProductCartSnapshotRequest {
@@ -72,4 +73,19 @@ message AuthorizeProductCoverUploadResponse {
 
 message ProductCoverUploadAuthorizationData {
   ProductCoverUploadVisibility visibility = 1;
+}
+
+message SetProductCoverRequest {
+  string product_id = 1;
+  string user_id = 2;
+  string blob_name = 3;
+  string container_name = 4;
+  string file_name = 5;
+  string content_type = 6;
+  int64 size = 7;
+  string alt_text = 8;
+}
+
+message SetProductCoverResponse {
+  common.ResponseStatus status = 1;
 }
