@@ -21,12 +21,6 @@ message GetProductCartSnapshotRequest {
   string product_id = 1;
 }
 
-enum ProductKindGrpc {
-  PRODUCT_KIND_GRPC_UNSPECIFIED = 0;
-  PRODUCT_KIND_GRPC_DIGITAL = 1;
-  PRODUCT_KIND_GRPC_PHYSICAL = 2;
-}
-
 message GetProductCartSnapshotResponse {
   common.ResponseStatus status = 1;
   ProductCartSnapshotData data = 2;
@@ -36,10 +30,8 @@ message ProductCartSnapshotData {
   string id = 1;
   string title = 2;
   int64 price = 3;
-  ProductKindGrpc kind = 4;
-  bool is_active = 5;
-  bool has_stock = 6;
-  int32 stock = 7;
+  bool is_active = 4;
+  int32 stock = 5;
 }
 
 message StockAdjustmentItem {
